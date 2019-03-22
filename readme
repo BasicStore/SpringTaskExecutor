@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------------------
+Spring TaskExecutor
+
+https://dzone.com/articles/spring-and-threads-taskexecutor
+
+The equivalent of ExecutorService in J8.
+It manages the threads of a threadpool, and adds jobs to those threads.
+IE. it handles the resource intensive procedure of creating the new threads automatically 
+---------------------------------------------------------------------------------------
+STAGES
+
+- create the task executor (which also defines and creates the thread pool)
+- define the thread (equivalent of Job in quartz scheduling)
+
+
+
+---------------------------------------------------------------------------------------
+

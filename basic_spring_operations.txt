@@ -1,0 +1,107 @@
+*****************************************************
+*****************************************************
+BASIC SPRING OPERATIONS
+*****************************************************
+*****************************************************
+
+- scheduling
+- [NON-SPRING] apply Futures interface
+- threadpools
+- webservices
+- asynch services
+- events
+- JMS
+- spring JDBC
+- email sending
+
+------------------------------------------
+SCHEDULING
+
+   Spring BOOT Scheduler /triger:
+   https://spring.io/guides/gs/scheduling-tasks/
+
+   Simple example from console app:
+   https://examples.javacodegeeks.com/enterprise-java/quartz/quartz-cron-schedule-example/
+
+   Build Cron expressions:
+   https://stackoverflow.com/questions/41099397/use-day-of-month-and-day-of-week-both-in-cron-expression [useful chart]
+
+   --> try spring boot example and test with different crons 
+   --> use standalone example
+   --> try adding a scheduler to the struts2 project
+------------------------------------------
+FUTURES
+
+Non-spring research
+
+------------------------------------------
+MULTI-THREADING & Threadpools
+
+Instead of ExecutorService, uses java.util.concurrent.TaskExecutor....Spring provides concrete implementation.
+https://dzone.com/articles/spring-and-threads-taskexecutor
+--> run the above example
+--> add several threads to the task executor
+--> run these from a webapp
+
+Compare to Future Interface and ExecutorService
+
+------------------------------------------
+EVENTS
+
+OLD SPRING WAY:
+background:  old way (but uses beans.xml, so not spring boot)
+https://www.tutorialspoint.com/spring/custom_events_in_spring.htm
+
+SPRING BOOT:
+https://www.baeldung.com/spring-events
+
+Asynchronous events occur independently of the program flow,
+for example. Asynchronous also implies multi-threading. 
+
+COMBINE AN EVENT LISTENER WITH A NEW JOB RUNNER
+- ie create a listener with a TaskExecutor which is always running
+     it listens for an event
+     on receipt of an event, it starrts a new job in its own process
+
+------------------------------------------
+CALLING ASYCNCH SERVICE  
+
+https://spring.io/guides/gs/async-method/
+
+------------------------------------------
+Spring JMS Messages (for messaging between 2 processes / applications)
+https://spring.io/guides/gs/messaging-jms/
+
+- not clear how much data can be contained in the data object,
+  but certainly use primitive types + strings only with this approach 
+
+------------------------------------------
+WEBSERVICES
+
+Play about with this:
+https://spring.io/guides/gs/rest-service/
+
+https://spring.io/guides/tutorials/rest/
+
+ALSO: Checkout @slf4j annotation:
+
+Assume that documentation of endpoints is simply:
+[Request Type] + [Get/Post/RequestMapping string] + [Description]
+
+------------------------------------------
+
+SPRING JDBC
+
+SPRING JDBC TEMPLATE:  lightweight
+HIB: hql or annotation driven, plugins for auditing, dialects etc
+
+https://spring.io/guides/gs/relational-data-access/
+
+------------------------------------------
+Sending an email for notifications:
+
+https://www.tutorialspoint.com/spring_boot/spring_boot_sending_email.htm
+
+Assume spring-boot-starter-mail contains an embedded sntp server
+
+------------------------------------------
