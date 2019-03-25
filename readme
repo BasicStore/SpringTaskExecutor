@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------
+EVENTS AND THREADPOOL / MULTI-THREADING IN SPRING
+
+Uses spring TaskExecutor (instead of ExecutorService in J8)
+The publishes and receives an event via implementation of spring's ApplicationEventPublisher / ApplicationListener.
+Then spawns a new thread, a job to persist to the db in a separate process.
+
+---------------------------------------------------------------------------------------
 Spring TaskExecutor
 
 https://dzone.com/articles/spring-and-threads-taskexecutor
