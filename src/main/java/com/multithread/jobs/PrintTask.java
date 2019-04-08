@@ -1,16 +1,14 @@
 package com.multithread.jobs;
 
-public class PrintTask implements Runnable {
-	
-	private String name;
+public class PrintTask extends GenericTask implements Runnable {
 	
 	public PrintTask(String name) {
-		this.name = name;
+		super(name);
 	}
 	
 	@Override
 	public void run() {
-		
+		recordStart();
 		System.out.println(name + " is running");
 		
 		try {
@@ -20,6 +18,8 @@ public class PrintTask implements Runnable {
 		}
 		
 		System.out.println(name + " is running out");
+		
+		recordEnd();
 	}
 
 }

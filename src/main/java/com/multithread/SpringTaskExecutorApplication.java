@@ -32,6 +32,7 @@ public class SpringTaskExecutorApplication implements CommandLineRunner {
 	@Override  
 	public void run(String... args) throws Exception {
 	    System.out.println("=========> preparing to set tasks running..........");
+	    
 	    taskExecutor.execute(new PrintTask("Thread 1"));
 	    taskExecutor.execute(new PrintTask("Thread 2"));
 	    taskExecutor.execute(new PrintTask("Thread 3"));
